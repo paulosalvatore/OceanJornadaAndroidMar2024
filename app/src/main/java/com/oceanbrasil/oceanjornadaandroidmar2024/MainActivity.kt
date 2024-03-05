@@ -3,6 +3,7 @@ package com.oceanbrasil.oceanjornadaandroidmar2024
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -21,13 +22,14 @@ class MainActivity : AppCompatActivity() {
         // Ex: findViewById<Button>(R.id.btEnviar)
         val btEnviar = findViewById<Button>(R.id.btEnviar)
         val tvResultado = findViewById<TextView>(R.id.tvResultado)
+        val etNome = findViewById<EditText>(R.id.etNome)
 
         // Criamos um listener para o botão encontrado
         btEnviar.setOnClickListener {
             // O código dentro das chaves { } será executado ao clicar no botão
 
             // Atualiza o conteúdo do TextView
-            tvResultado.text = "Samsung Ocean!!"
+            tvResultado.text = etNome.text
         }
     }
 }
