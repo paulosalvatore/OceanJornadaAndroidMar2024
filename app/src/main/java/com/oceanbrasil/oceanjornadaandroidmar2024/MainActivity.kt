@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 // Atualiza o conteúdo do TextView
                 tvResultado.text = etNome.text
             } else { // Caso contrário, exibimos o erro
-                etNome.error = "Digite um nome válido!"
+                etNome.error = getString(R.string.insert_a_valid_name)
             }
         }
 
