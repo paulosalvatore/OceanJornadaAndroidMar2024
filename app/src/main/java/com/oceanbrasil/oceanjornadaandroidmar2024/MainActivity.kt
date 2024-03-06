@@ -1,5 +1,6 @@
 package com.oceanbrasil.oceanjornadaandroidmar2024
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -36,6 +37,19 @@ class MainActivity : AppCompatActivity() {
             } else { // Caso contrário, exibimos o erro
                 etNome.error = "Digite um nome válido!"
             }
+        }
+
+        // Comportamento do botão de Abrir Nova Tela
+        // Localizamos o botão na tela, usando o ID
+        val btAbrirNovaTela = findViewById<Button>(R.id.btAbrirNovaTela)
+
+        // Criamos um listener para esse botão
+        btAbrirNovaTela.setOnClickListener {
+            // Criamos a Intent para ir dessa tela à ResultadoActivity
+            val novaTelaIntent = Intent(this, ResultadoActivity::class.java)
+
+            // Para que o Android abra a tela, precisamos registrá-la
+            startActivity(novaTelaIntent)
         }
     }
 }
