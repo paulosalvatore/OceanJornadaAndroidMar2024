@@ -16,19 +16,26 @@ class TreasureActivity : AppCompatActivity() {
         val tvMensagem = findViewById<TextView>(R.id.tvMensagem)
         val ivTesouro = findViewById<ImageView>(R.id.ivTesouro)
 
-        if (palavraChave == "ouro") {
-            ivTesouro.setImageResource(R.drawable.ouro)
-            tvMensagem.text = "Parabéns, você encontrou o ouro!"
-        } else if (palavraChave == "prata") {
-            ivTesouro.setImageResource(R.drawable.prata)
-            tvMensagem.text = "Parabéns, você encontrou a prata!"
-        } else if (palavraChave == "bronze") {
-            ivTesouro.setImageResource(R.drawable.bronze)
-            tvMensagem.text = "Parabéns, você encontrou o bronze!"
-        } else {
-            ivTesouro.setImageResource(R.drawable.bau_vazio)
-            tvMensagem.text = "Desculpe, continue procurando!"
+        var imagemTesouro = R.drawable.bau_vazio
+        var mensagemTesouro = "Desculpe, continue procurando!"
+
+        when (palavraChave) {
+            "ouro" -> {
+                imagemTesouro = R.drawable.ouro
+                mensagemTesouro = "Parabéns, você encontrou o ouro!"
+            }
+            "prata" -> {
+                imagemTesouro = R.drawable.prata
+                mensagemTesouro = "Parabéns, você encontrou a prata!"
+            }
+            "bronze" -> {
+                imagemTesouro = R.drawable.bronze
+                mensagemTesouro = "Parabéns, você encontrou o bronze!"
+            }
         }
+
+        ivTesouro.setImageResource(imagemTesouro)
+        tvMensagem.text = mensagemTesouro
 
         val btVoltar = findViewById<Button>(R.id.btVoltar)
         btVoltar.setOnClickListener {
