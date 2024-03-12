@@ -1,6 +1,7 @@
 package com.oceanbrasil.oceanjornadaandroidmar2024
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,6 +18,11 @@ class TreasureActivity : AppCompatActivity() {
             tvMensagem.text = "Parabéns, você encontrou o tesouro!"
         } else {
             tvMensagem.text = "Desculpe, continue procurando!"
+        }
+
+        val btVoltar = findViewById<Button>(R.id.btVoltar)
+        btVoltar.setOnClickListener {
+            finish()
         }
     }
 }
