@@ -26,6 +26,7 @@ class TreasureActivity : AppCompatActivity() {
             ivTesouro.setImageResource(R.drawable.bronze)
             tvMensagem.text = "Parabéns, você encontrou o bronze!"
         } else {
+            ivTesouro.setImageResource(R.drawable.bau_vazio)
             tvMensagem.text = "Desculpe, continue procurando!"
         }
 
