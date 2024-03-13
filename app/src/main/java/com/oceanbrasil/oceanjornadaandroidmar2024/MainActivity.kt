@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Array<Item>>, response: Response<Array<Item>>) {
                 response.body()?.let {
                     Log.d("API", it.size.toString())
+
+                    it.forEach {
+                        Log.d("API", "${it.nome} - ${it.imagem}")
+                    }
                 }
             }
 
