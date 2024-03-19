@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
                 response.body()?.let {
                     Log.d("API", it.size.toString())
 
+                    rvItens.adapter = ItemAdapter(it.toList())
+
                     it.forEach {
                         Log.d("API", "${it.nome} - ${it.imagem}")
                     }
