@@ -13,6 +13,11 @@ class ItemDetailActivity : AppCompatActivity() {
 
         if (id > 0) {
             Toast.makeText(this, "Carregar API para o ID $id", Toast.LENGTH_LONG).show()
+
+            // TODO: Desafio!
+            //   Implementar a chamada para API para o endpoint /itens/:id, usando o ID recebido
+            //   Ao receber os dados, atualizar o TextView, ImageView e as 3 Chips com os valores
+            //   recebidos da API.
         }
     }
 }
