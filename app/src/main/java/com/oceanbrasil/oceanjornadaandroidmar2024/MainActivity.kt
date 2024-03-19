@@ -3,6 +3,8 @@ package com.oceanbrasil.oceanjornadaandroidmar2024
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,6 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Configuração da RecyclerView
+        val rvItens = findViewById<RecyclerView>(R.id.rvItens)
+        rvItens.layoutManager = LinearLayoutManager(this)
+
+        // Preparando interação com a API (Backend)
         val retrofit = Retrofit.Builder()
             .baseUrl("https://ocean-api-itens.onrender.com/")
             .addConverterFactory(GsonConverterFactory.create())
