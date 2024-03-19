@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class ItemAdapter(val itens: List<Item>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -14,7 +15,7 @@ class ItemAdapter(val itens: List<Item>) : RecyclerView.Adapter<ItemAdapter.View
             val imageView = itemView.findViewById<ImageView>(R.id.imageView)
 
             textView.text = item.nome
-            // TODO: Implementar carregamento da imagem com Glide
+            Glide.with(imageView).load(item.imagem).into(imageView)
         }
     }
 
