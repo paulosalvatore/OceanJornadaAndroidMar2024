@@ -20,6 +20,7 @@ class ItemAdapter(val itens: List<Item>) : RecyclerView.Adapter<ItemAdapter.View
 
             itemView.setOnClickListener {
                 val itemDetailIntent = Intent(itemView.context, ItemDetailActivity::class.java)
+                itemDetailIntent.putExtra("ID", item.id)
                 itemView.context.startActivity(itemDetailIntent)
             }
         }

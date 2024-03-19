@@ -4,6 +4,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 data class Item(
+    val id: Int,
     val nome: String,
     val imagem: String
 )
