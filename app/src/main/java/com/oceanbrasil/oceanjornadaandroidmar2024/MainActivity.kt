@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         val rvItens = findViewById<RecyclerView>(R.id.rvItens)
         rvItens.layoutManager = LinearLayoutManager(this)
 
+        // Exemplo com Grid de 2 colunas:
+        // rvItens.layoutManager = GridLayoutManager(this, 2)
+
         // Preparando interação com a API (Backend)
         val retrofit = Retrofit.Builder()
             .baseUrl("https://ocean-api-itens.onrender.com/")
