@@ -1,5 +1,6 @@
 package com.oceanbrasil.oceanjornadaandroidmar2024
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,11 @@ class ItemAdapter(val itens: List<Item>) : RecyclerView.Adapter<ItemAdapter.View
 
             textView.text = item.nome
             Glide.with(imageView).load(item.imagem).into(imageView)
+
+            itemView.setOnClickListener {
+                val itemDetailIntent = Intent(itemView.context, ItemDetailActivity::class.java)
+                itemView.context.startActivity(itemDetailIntent)
+            }
         }
     }
 
