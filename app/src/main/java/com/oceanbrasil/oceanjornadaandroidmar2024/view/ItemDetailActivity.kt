@@ -1,4 +1,4 @@
-package com.oceanbrasil.oceanjornadaandroidmar2024
+package com.oceanbrasil.oceanjornadaandroidmar2024.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
+import com.oceanbrasil.oceanjornadaandroidmar2024.model.api.ApiService
+import com.oceanbrasil.oceanjornadaandroidmar2024.model.domain.ItemDetail
+import com.oceanbrasil.oceanjornadaandroidmar2024.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

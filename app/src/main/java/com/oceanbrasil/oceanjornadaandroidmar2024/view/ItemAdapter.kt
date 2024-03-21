@@ -1,4 +1,4 @@
-package com.oceanbrasil.oceanjornadaandroidmar2024
+package com.oceanbrasil.oceanjornadaandroidmar2024.view
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.oceanbrasil.oceanjornadaandroidmar2024.model.domain.Item
+import com.oceanbrasil.oceanjornadaandroidmar2024.R
 
 class ItemAdapter(val itens: List<Item>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

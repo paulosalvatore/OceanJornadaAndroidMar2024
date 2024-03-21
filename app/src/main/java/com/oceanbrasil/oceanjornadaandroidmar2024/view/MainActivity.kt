@@ -1,10 +1,13 @@
-package com.oceanbrasil.oceanjornadaandroidmar2024
+package com.oceanbrasil.oceanjornadaandroidmar2024.view
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.oceanbrasil.oceanjornadaandroidmar2024.model.api.ApiService
+import com.oceanbrasil.oceanjornadaandroidmar2024.model.domain.Item
+import com.oceanbrasil.oceanjornadaandroidmar2024.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
