@@ -1,18 +1,12 @@
 package com.oceanbrasil.oceanjornadaandroidmar2024.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.oceanbrasil.oceanjornadaandroidmar2024.model.api.ApiService
-import com.oceanbrasil.oceanjornadaandroidmar2024.model.domain.Item
 import com.oceanbrasil.oceanjornadaandroidmar2024.R
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.oceanbrasil.oceanjornadaandroidmar2024.viewmodel.ItemViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,30 +20,9 @@ class MainActivity : AppCompatActivity() {
         // Exemplo com Grid de 2 colunas:
         // rvItens.layoutManager = GridLayoutManager(this, 2)
 
-        // Preparando interação com a API (Backend)
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://ocean-api-itens.onrender.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val apiService = retrofit.create(ApiService::class.java)
-
-        apiService.carregarItens().enqueue(object : Callback<Array<Item>> {
-            override fun onResponse(call: Call<Array<Item>>, response: Response<Array<Item>>) {
-                response.body()?.let {
-                    Log.d("API", it.size.toString())
-
-                    rvItens.adapter = ItemAdapter(it.toList())
-
-                    it.forEach {
-                        Log.d("API", "${it.nome} - ${it.imagem}")
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<Array<Item>>, t: Throwable) {
-                Log.e("API", "Erro ao carregar dados da API.", t)
-            }
-        })
+        val itemViewModel = ViewModelProvider(this)[ItemViewModel::class.java]
+        itemViewModel.itens.observe(this) {
+            rvItens.adapter = ItemAdapter(it)
+        }
     }
 }
